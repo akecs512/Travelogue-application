@@ -1,1 +1,1 @@
-# project-2-challenge
+# note-taker-challenge
