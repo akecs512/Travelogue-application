@@ -1,54 +1,46 @@
-const express = require("express");
-const fs = require("fs");
-const path = require("path");
+const path = require('path');
+const express = require('express');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
+
+const sequelize = require('./config/connection');
+
+// Imports the connect-session-seqeulize package (middleware)
+// Session data will be stored in a Seqeulize-managed database.
+//Session.store is turning it on
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const hbs = exphbs.create({ helpers });
+
+// Configures how session data will be handled and stored 
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+// This statement adds the session management functionality to an Express.js app
+app.use(session(sess));
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
+app.use(routes);
 
-app.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/notes.html"));
-});
-
-app.get("/api/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "db/db.json"));
-});
-
-app.get("/api/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "db/db.json"));
-});
-
-app.post("/api/notes", (req, res) => {
-  const newNote = req.body;
-  console.log(newNote);
-  const data = fs.readFileSync("db/db.json");
-  const notesList = JSON.parse(data);
-  notesList.push(newNote);
-  fs.writeFileSync("db/db.json", JSON.stringify(notesList));
-
-  res.sendStatus(200);
-});
-
-app.delete("/api/notes/:id", (req, res) => {
-  const id = req.params.id;
-  const data = fs.readFileSync("db/db.json");
-  const notesList = JSON.parse(data);
-  const newNotesList = notesList.filter((note) => note.id != id);
-  fs.writeFileSync("db/db.json", JSON.stringify(newNotesList));
-  res.sendStatus(200);
-});
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
-
-app.listen(PORT, () => {
-  console.log(`Server listening to http://localhost:${PORT}`);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
