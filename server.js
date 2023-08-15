@@ -1,10 +1,10 @@
 const express = require('express');
 const session = require('express-session');
-const routes = require('./routes');
+const routes = require('./controllers2');
 const exphbs = require('express-handlebars');
 const path = require("path");
-const styles = require(path.join(__dirname, 'public/assets/css'));
-//not sure we need fs on this page
+const helpers = require('./utils/helpers');
+// const styles = require(path.join(__dirname, 'public/assets/css'));
 // const fs = require("fs");
 
 const sequelize = require('./config/connection');
@@ -12,6 +12,11 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 const sess = {
   secret: 'Super secret secret',
@@ -37,9 +42,6 @@ app.use(routes);
 app.use(express.static(path.join(__dirname, 'public')));
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log(`Server listening to http://localhost:${PORT}`));
 });
 
-// app.listen(PORT, () => {
-//   console.log(`Server listening to http://localhost:${PORT}`);
-// });
