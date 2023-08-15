@@ -3,6 +3,7 @@ const session = require('express-session');
 const routes = require('./routes');
 const exphbs = require('express-handlebars');
 const path = require("path");
+// const styles = require('public');
 //not sure we need fs on this page
 // const fs = require("fs");
 
@@ -35,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 app.use(express.static(path.join(__dirname, 'public')));
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
