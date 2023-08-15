@@ -52,3 +52,5 @@ app.get("/*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening to http://localhost:${PORT}`);
 });
+
+module.exports = router;
