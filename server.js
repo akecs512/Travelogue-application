@@ -3,7 +3,7 @@ const session = require('express-session');
 const routes = require('./routes');
 const exphbs = require('express-handlebars');
 const path = require("path");
-// const styles = require('public');
+const styles = require(path.join(__dirname, 'public/assets/css'));
 //not sure we need fs on this page
 // const fs = require("fs");
 
