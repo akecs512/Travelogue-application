@@ -19,7 +19,7 @@ app.set('view engine', 'handlebars');
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge:30 * 60 * 1000, 
+    maxAge: 30 * 60 * 1000, 
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
@@ -32,12 +32,10 @@ const sess = {
 };
 
 app.use(session(sess));
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.use(routes);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Server listening to http://localhost:${PORT}`));
