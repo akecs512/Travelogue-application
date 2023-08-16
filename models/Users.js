@@ -1,10 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const argon2 = require('argon2');
 
 class User extends Model {
   checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
+    return argon2.veryify(this.password, loginPw);
   }
 }
 
@@ -39,7 +40,7 @@ User.init(
   {
     hooks: {
       async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        newUserData.password = await argon2.hash(newUserData.password, {hashLength:40});
         return newUserData;
       },
     },
