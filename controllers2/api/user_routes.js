@@ -6,7 +6,7 @@ const User = require('../../models/Users');
 // CREATE new user
 
 
-router.post('/api/pages', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
