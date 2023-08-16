@@ -10,6 +10,9 @@ router.get('/', (req, res) => {
 
 // CREATE new user
 router.post('/', async (req, res) => {
+  console.log(req.body.username);
+  console.log(req.body.email);
+  console.log(req.body.password);
   try {
     const dbUserData = await User.create({
       username: req.body.username,
@@ -20,7 +23,8 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.render(dbUserData);
+     // res.render(dbUserData);
+     res.status(200).json(dbUserData);
     });
   } catch (err) {
     console.log(err);
