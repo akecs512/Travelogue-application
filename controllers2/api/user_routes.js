@@ -4,7 +4,9 @@ const User = require('../../models/Users');
 // The `/api/user` endpoint
 
 // CREATE new user
-router.post('/', async (req, res) => {
+
+
+router.post('/api/pages', async (req, res) => {
   try {
     const dbUserData = await User.create({
       username: req.body.username,
@@ -24,7 +26,7 @@ router.post('/', async (req, res) => {
 });
 
 // Login
-router.post('/login', async (req, res) => {
+router.post('/api/pages', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
