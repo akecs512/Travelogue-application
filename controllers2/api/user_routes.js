@@ -4,6 +4,8 @@ const User = require('../../models/Users');
 // The `/api/user` endpoint
 
 // CREATE new user
+
+
 router.post('/api/pages', async (req, res) => {
   try {
     const dbUserData = await User.create({
