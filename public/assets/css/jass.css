@@ -970,6 +970,11 @@ a:hover {
 .display-flex {
   display: flex !important;
 }
+.btn-navbar {
+  text-align: center;
+  color: white;
+  background-color: transparent;
+}
 
 .btn {
   text-align: center;
