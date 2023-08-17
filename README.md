@@ -1,8 +1,9 @@
 # TRAVELOGUE
 
 
-![TLLogo05](https://github.com/akecs512/project-2-challenge/assets/79340489/43f1b094-ba8f-4f7b-a94d-5a25be5b40c6)
 
+
+![TLLogo06](https://github.com/akecs512/project-2-challenge/assets/79340489/9ecf7c70-90b2-420f-bfd6-10850957c14f)
 
 
 ## Description
