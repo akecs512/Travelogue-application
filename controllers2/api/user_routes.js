@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 });
 
 // Login
-router.post('/api/pages', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
