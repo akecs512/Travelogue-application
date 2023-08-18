@@ -1,35 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
 const travelContainer = document.getElementById('travelContainer');
 
-try {
-  const response = await fetch('/api/travel');
-  const travelData = await response.json();
-
-  travelData.forEach(travel => {
-    const travelElement = document.createElement('div');
-    travelElement.innerHTML = `
-      <div class='travel col-md-5'>
-        <p>
-          ${travel.destination}.
-          ${travel.note}
-        </p>
-      </div>
-      <div class='col-md-7'>
-        <p>
-          ${travel.date} 
-        </p>
-      </div>
-    `;
-    travelContainer.appendChild(travelElement);
-  });
-} catch (error) {
-  console.error('Error fetching travel data:', error);
-}
-
-})
-
-
-
 async function newFormHandler(event) {
   event.preventDefault();
   const destination = document.querySelector('#destination').value;
