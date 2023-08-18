@@ -22,7 +22,11 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="/login">Login</a></li>  
+                {{#if loggedIn}}
+                <button class="btn-navbar" id="logout">Logout</button>
+                {{else}}
+                    <a href="/login">Login</a> 
+                {{/if}} 
                 </ul>
             </div> 
         </nav>
@@ -32,8 +36,9 @@
     <main class="navbar bg-info container-fluid">
         {{{body}}}
     </main>
-     {{!-- <script src="/js/login.js"></script> --}}
+     {{#if loggedIn}}
      <script src="/js/logout.js"></script>
+     {{/if}}
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
