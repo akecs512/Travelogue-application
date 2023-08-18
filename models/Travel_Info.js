@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class TravelInfo extends Model {}
 
-TravelInfo.init(
+TravelInfo.init                                       (
   {
     id: {
       type: DataTypes.INTEGER,
