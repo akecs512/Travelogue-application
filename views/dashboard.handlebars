@@ -4,7 +4,7 @@
       Travelogues
     </h2>
   </div>
-  {{#each travelDatas as |travelData|}}
+ {{#each travelDatas as |travelData|}}
     <div class='travel col-md-5'>
       <p>
         {{travelData.destination}}.
@@ -13,10 +13,13 @@
     </div>
     <div class='col-md-7'>
       <p>
+    <a href="travelogue/1">{{travelData.note}}</a>
+
         {{travelData.date}} 
       </p>
     </div>
   {{/each}}
+
   <div class='add-travel-note'>
     <h2>
       Enter a trip to remember

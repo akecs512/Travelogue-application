@@ -19,15 +19,7 @@ router.get('/', async (req, res) => {
   }
   }); 
 
-   router.get('/dashboard', async(req, res) => {
-    try {
-      const response = await fetch('/api/travel');
-      const travelDatas = await response.json()
-      res.render('dashboard', { travelDatas });
-    } catch(err){
-    res.status(500).json(err);
-  }
-   });
+
 
   router.post('/', async (req, res) => {
     try { 
