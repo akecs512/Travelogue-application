@@ -5,7 +5,6 @@ const User = require('../../models/Users');
 
 // CREATE new user
 
-
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -55,7 +54,8 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: dbUserData, message: 'You are now logged in!',
+               alert: "welcome back, user!" });
     });
   } catch (err) {
     console.log(err);

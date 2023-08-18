@@ -26,9 +26,9 @@ router.get('/travelogue', (req, res) => {
     res.render('travelogue');
 });
 
-router.get('/dashboard', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/');
+router.get('/dashboard', withAuth, (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('/login');
         return;
     }
     res.render('dashboard');
