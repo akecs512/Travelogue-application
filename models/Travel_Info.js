@@ -15,10 +15,10 @@ TravelInfo.init                                       (
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+   date: {
+    type: DataTypes.DATE,
+    allowNull: false,
+   },
     note: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -13,6 +13,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      alert('You have successfully logged in. Welcome back!!');
       document.location.replace('/');
     } else {
       alert('Failed to log in.');
@@ -51,3 +52,14 @@ document
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+
+  const loggedIn = true;
+
+  if(loggedIn) {
+    // document.querySelector('#logout').style.display = 'block';
+    document.querySelector('#login').style.display = 'hidden';
+
+  }else{
+    document.querySelector('#login').style.display = 'block';
+    document.querySelector('#logout').style.display = 'hidden';
+  }
