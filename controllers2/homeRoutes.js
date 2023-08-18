@@ -18,4 +18,20 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+router.get('/travelogue', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('travelogue');
+});
+
+router.get('/dashboard', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('dashboard');
+});
+
 module.exports = router;
