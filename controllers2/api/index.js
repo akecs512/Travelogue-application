@@ -3,9 +3,9 @@ const travelRoutes = require('./travel_info_routes');
 const userRoutes = require('./user_routes');
 const pageRoutes = require('./pages_route');
 
-const dishRoutes = require('./dish-routes.js');
 
-router.use('/dish', dishRoutes);
+
+
 
 module.exports = router;
 
