@@ -1,50 +1,21 @@
 
 
-document.addEventListener('DOMContentLoaded', async () => {
-const travelContainer = document.getElementById('travelContainer');
-
-try {
-  const response = await fetch(`/api/travel/`);
-  const travelData = await response.json();
-
-  travelData.forEach(travel => {
-    const travelElement = document.createElement('div');
-    travelElement.innerHTML = `
-      <div class='travel col-md-5'>
-        <p>
-          ${travel.destination}.
-          ${travel.note}
-        </p>
-      </div>
-      <div class='col-md-7'>
-        <p>
-          ${travel.date} 
-        </p>
-      </div>
-    `;
-    travelContainer.appendChild(travelElement);
-  });
-} catch (error) {
-  console.error('Error fetching travel data:', error);
-}
-
-})
-
 
 async function newFormHandler(event) {
   event.preventDefault();
   const destination = document.querySelector('#destination').value;
   const note = document.querySelector('#note').value;
-
   let leanNote =  note.trim();
-  const date = document.querySelector('#date').value;
+  const startDate = new Date(document.querySelector('#start-date').value);
+  const endDate = new Date (document.querySelector('#end-date').value);
   
   // Send post request to add a new tavel information
   let response = await fetch(`/api/travel`, {
     method: 'POST',
     body: JSON.stringify({
       destination: destination,
-      date: date,
+      start_date: startDate,
+      end_date: endDate,
       note: leanNote,
 
     }),
@@ -60,7 +31,9 @@ async function newFormHandler(event) {
   }
 }
 
-
-document.querySelector('.new-post-form').addEventListener('click', newFormHandler);
-  
+console.log(document.querySelector('.new-post-form'));
+const formElement = document.querySelector('.new-post-form');
+if (formElement) {
+document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+} 
 

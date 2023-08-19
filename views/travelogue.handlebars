@@ -15,11 +15,11 @@
   </div>
   <div class='col-md-7'>
     <p>
-      {{ format_date travelData.date}}
+      {{format_date travelData.start_date}} to {{ format_date travelData.end_date}}
     </p>
   </div>
   {{/each}}
 </div>
 
-<!-- This is the form for retrrieving saved logs -->
+<!-- This is the form for retrieving saved logs -->
 <script src='/js/addTravel.js'></script>

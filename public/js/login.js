@@ -55,11 +55,11 @@ document
 
   const loggedIn = true;
 
-  if(loggedIn) {
-    // document.querySelector('#logout').style.display = 'block';
-    document.querySelector('#login').style.display = 'hidden';
+  // if(loggedIn) {
+  //   // document.querySelector('#logout').style.display = 'block';
+  //   document.querySelector('#login').style.display = 'hidden';
 
-  }else{
-    document.querySelector('#login').style.display = 'block';
-    document.querySelector('#logout').style.display = 'hidden';
-  }
+  // }else{
+  //   document.querySelector('#login').style.display = 'block';
+  //   document.querySelector('#logout').style.display = 'hidden';
+  // }
