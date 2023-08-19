@@ -29,7 +29,7 @@ router.get('/travelogue', async (req, res) => {
     const travelDatas = dbtravelData.map((travel_info) =>
     travel_info.get({plain: true})
     );
-    console.log(travelDatas);
+
     res.render('travelogue', {travelDatas})
       
   } catch(err) {

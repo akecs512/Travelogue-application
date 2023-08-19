@@ -1,55 +1,37 @@
                                                                                                    <div class='menu-container'>
-  <div id="travelContainer"class='card-header col-md-10'>
-    <h2>
-      Travelogues
-    </h2>
-  </div>
- {{#each travelDatas as |travelData|}}
-    <div class='travel col-md-5'>
-      <p>
-        {{travelData.destination}}.
-        {{travelData.note}}
-      </p>
-    </div>
-    <div class='col-md-7'>
-      <p>
-    <a href="travelogue/1">{{travelData.note}}</a>
+  <div id="travelContainer"class='' style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+    <h1>Travelogues</h1>
+    <h2>Enter a trip to remember</h2>
 
-        {{travelData.date}} 
-      </p>
-    </div>
-  {{/each}}
-
-  <div class='add-travel-note'>
-    <h2>
-      Enter a trip to remember
-    </h2>
     <form class='new-post-form'>
       <label for='destination_name'>
         Destination Name:
       </label>
-      <br />
       <input type = 'text' id="destination" name="destination"/>
+      
+      <br/>
       <label for='note'>
-        Travel Notes:
+        Travel Notes:</label>
+      <textarea id='note' name='note' rows='5' cols='30'></textarea>
+
+      <div class="flex-row" style="gap: 16px;">
+      <div>
+      <label for="start-date">
+        Start Date:
       </label>
-      <br />
-      <textarea id='note' name='note' rows='5' cols='30'>
-        {{!-- {{note}} --}}
-      </textarea>
-      <br />
-      <label for="date">
-        Date:
+      <input type="date" id="start-date" name="start-date" rows='2' cols='30'>
+      </div>
+      <div>
+       <label for="end-date">
+        End Date:
       </label>
-      <br />
-      <input type="date" id="date" name="date" rows='2' cols='30'>
-        {{!-- {{note}} --}}
-      <br />
+         <input type="date" id="end-date" name="end-date" rows='2' cols='30'>
+         </div>
+         </div>
       <button type='submit' value='Submit'>
         Submit
       </button>
     </form>
   </div>
-</div>
 <!-- This is the form for adding a new log-->
 <script src='/js/addTravel.js'></script>
