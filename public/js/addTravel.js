@@ -1,34 +1,35 @@
-document.addEventListener('DOMContentLoaded', async () => {
-const travelContainer = document.getElementById('travelContainer');
+// document.addEventListener("DOMContentLoaded", async () => {
+//   const travelContainer = document.getElementById("travelContainer");
 
-try {
-  const response = await fetch('/api/travel');
-  const travelData = await response.json();
+//   try {
+//     const response = await fetch("/api/travel");
+//     const travelData = await response.json();
 
-  travelData.forEach(travel => {
-    const travelElement = document.createElement('div');
-    travelElement.innerHTML = `
-      <div class='travel col-md-5'>
-        <p>
-          ${travel.destination}.
-          ${travel.note}
-        </p>
-      </div>
-      <div class='col-md-7'>
-        <p>
-          ${travel.date} 
-        </p>
-      </div>
-    `;
-    travelContainer.appendChild(travelElement);
-  });
-} catch (error) {
-  console.error('Error fetching travel data:', error);
-}
+//     travelData.forEach((travel) => {
+//       const travelElement = document.createElement("div");
+//       travelElement.innerHTML = `
+//       <div class='travel col-md-5'>
+//         <p>
+//           ${travel.destination}.
+//           ${travel.note}
+//         </p>
+//       </div>
+//       <div class='col-md-7'>
+//         <p>
+//           ${travel.date} 
+//         </p>
+//       </div>
+//     `;
+//       travelContainer.appendChild(travelElement);
+//     });
+//   } catch (error) {
+//     console.error("Error fetching travel data:", error);
+//   }
+// });
 
-})
-
-
+document
+  .querySelector(".new-post-form")
+  .addEventListener("submit", newFormHandler);
 
 async function newFormHandler(event) {
   event.preventDefault();
@@ -57,6 +58,3 @@ async function newFormHandler(event) {
     alert('Failed to add comment');
   }
 }
-
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
-  

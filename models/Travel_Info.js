@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class TravelInfo extends Model {}
 
-TravelInfo.init                                       (
+TravelInfo.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,27 +15,31 @@ TravelInfo.init                                       (
       type: DataTypes.STRING,
       allowNull: false,
     },
-   date: {
-    type: DataTypes.DATE,
-    allowNull: false,
-   },
+    start_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
+    end_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
     note: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id:{
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
-    }
+    },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'travel_info',
+    modelName: "travel_info",
   }
 );
 
