@@ -44,6 +44,5 @@ router.get('/', async (req, res) => {
     res.status(res.status).json(err);
   }
   });
-  
 
   module.exports = router;

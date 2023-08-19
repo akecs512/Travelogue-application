@@ -30,7 +30,7 @@ try {
 
 })
 
-=======
+
 async function newFormHandler(event) {
   event.preventDefault();
   const destination = document.querySelector('#destination').value;
