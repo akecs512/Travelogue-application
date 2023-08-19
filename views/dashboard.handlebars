@@ -2,8 +2,14 @@
   <div id="travelContainer"class='card-header col-md-10'>
     <h2>
       Travelogues
+      <br />
+       <div class='add-travel-note'></div>
+        </h2>
+    <h2>
+      Enter a trip to remember
     </h2>
   </div>
+  <div>
  {{#each travelDatas as |travelData|}}
     <div class='travel col-md-5'>
       <p>
@@ -11,19 +17,17 @@
         {{travelData.note}}
       </p>
     </div>
-    <div class='col-md-7'>
+    {{!-- <div class='col-md-7'>
       <p>
-    <a href="travelogue/1">{{travelData.note}}</a>
+    <a href="travelogue/1">{{travelData.destination}}</a>
 
         {{travelData.date}} 
       </p>
-    </div>
+    </div> --}}
   {{/each}}
-
-  <div class='add-travel-note'>
-    <h2>
-      Enter a trip to remember
-    </h2>
+  </div>
+  <br />
+   <div>
     <form class='new-post-form'>
       <label for='destination_name'>
         Destination Name:
@@ -50,6 +54,5 @@
       </button>
     </form>
   </div>
-</div>
 <!-- This is the form for adding a new log-->
 <script src='/js/addTravel.js'></script>
