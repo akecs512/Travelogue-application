@@ -1,4 +1,5 @@
 
+
 document.addEventListener('DOMContentLoaded', async () => {
 const travelContainer = document.getElementById('travelContainer');
 
@@ -29,10 +30,12 @@ try {
 
 })
 
+=======
 async function newFormHandler(event) {
   event.preventDefault();
   const destination = document.querySelector('#destination').value;
   const note = document.querySelector('#note').value;
+
   let leanNote =  note.trim();
   const date = document.querySelector('#date').value;
   
@@ -43,6 +46,7 @@ async function newFormHandler(event) {
       destination: destination,
       date: date,
       note: leanNote,
+
     }),
     headers: {
       'Content-Type': 'application/json',
@@ -56,5 +60,7 @@ async function newFormHandler(event) {
   }
 }
 
+
 document.querySelector('.new-post-form').addEventListener('click', newFormHandler);
   
+
