@@ -1,34 +1,3 @@
-document.addEventListener('DOMContentLoaded', async () => {
-const travelContainer = document.getElementById('travelContainer');
-
-try {
-  const response = await fetch('/api/travel');
-  const travelData = await response.json();
-
-  travelData.forEach(travel => {
-    const travelElement = document.createElement('div');
-    travelElement.innerHTML = `
-      <div class='travel col-md-5'>
-        <p>
-          ${travel.destination}.
-          ${travel.note}
-        </p>
-      </div>
-      <div class='col-md-7'>
-        <p>
-          ${travel.date} 
-        </p>
-      </div>
-    `;
-    travelContainer.appendChild(travelElement);
-  });
-} catch (error) {
-  console.error('Error fetching travel data:', error);
-}
-
-})
-
-
 
 async function newFormHandler(event) {
   event.preventDefault();
@@ -37,7 +6,7 @@ async function newFormHandler(event) {
   const date = document.querySelector('#date').value;
   // The following is a ternary operator. It checks to see if has_nuts is checked. If it is, it will return true, otherwise, it will return false.
 
-  // Send fetch request to add a new dish
+  // Send fetch request to add a new post
   const response = await fetch(`/api/travel`, {
     method: 'POST',
     body: JSON.stringify({
@@ -50,7 +19,7 @@ async function newFormHandler(event) {
       'Content-Type': 'application/json',
     },
   });
-  //if the dish is added, the 'all' template will be rerendered
+  //if the post is added, the 'all' template will be rerendered
   if (response.ok) {
     document.location.replace('/');
   } else {

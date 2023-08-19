@@ -4,6 +4,7 @@ const withAuth = (req, res , next) => {
     } else {
         next();
     }
+    console.log('After withAuth:', req.session.loggedIn);
 };
 
 module.exports = withAuth;
