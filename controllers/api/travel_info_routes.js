@@ -22,16 +22,18 @@ router.get('/', async (req, res) => {
 
 
   router.post('/', async (req, res) => {
+    console.log(req.body);
     try { 
       const travelData = await TravelInfo.create({
       destination: req.body.destination,
       note: req.body.note,
-      date: new Date(req.body.date),
+      start_date: new Date(req.body.startDate),
+      end_date: new Date(req.body.endDate),
     });
     // if the dish is successfully created, the new response will be returned as json
     res.status(200).json(travelData)
   } catch (err) {
-    res.status(400).json(err);
+    res.status(res.status).json(err);
   }
   });
   
