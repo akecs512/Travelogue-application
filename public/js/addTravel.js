@@ -1,8 +1,9 @@
+
 document.addEventListener('DOMContentLoaded', async () => {
 const travelContainer = document.getElementById('travelContainer');
 
 try {
-  const response = await fetch('/api/travel');
+  const response = await fetch(`/api/travel/`);
   const travelData = await response.json();
 
   travelData.forEach(travel => {
@@ -28,35 +29,32 @@ try {
 
 })
 
-
-
 async function newFormHandler(event) {
   event.preventDefault();
   const destination = document.querySelector('#destination').value;
   const note = document.querySelector('#note').value;
+  let leanNote =  note.trim();
   const date = document.querySelector('#date').value;
-  // The following is a ternary operator. It checks to see if has_nuts is checked. If it is, it will return true, otherwise, it will return false.
-
-  // Send fetch request to add a new dish
-  const response = await fetch(`/api/travel`, {
+  
+  // Send post request to add a new tavel information
+  let response = await fetch(`/api/travel`, {
     method: 'POST',
     body: JSON.stringify({
-      destination,
-      note,
+      destination: destination,
       date: date,
-
+      note: leanNote,
     }),
     headers: {
       'Content-Type': 'application/json',
     },
   });
-  //if the dish is added, the 'all' template will be rerendered
+  //if travel is added, the 'all' template will be rerendered
   if (response.ok) {
-    document.location.replace('/');
+    window.location.replace('/travelogue');
   } else {
     alert('Failed to add comment');
   }
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-post-form').addEventListener('click', newFormHandler);
   

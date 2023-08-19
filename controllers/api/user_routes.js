@@ -13,11 +13,15 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
     
-
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.logged_in = true;
+      console.log ("1111   **************")
+      console.log (req.session.user_id);
+      console.log (req.session.logged_in)
 
       res.status(200).json(dbUserData);
+
     });
   } catch (err) {
     console.log(err);
@@ -51,7 +55,11 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.logged_in = true;
+      console.log ("2222   **************")
+      console.log (req.session.user_id);
+      console.log (req.session.logged_in)
 
       res
         .status(200)
@@ -66,7 +74,8 @@ router.post('/login', async (req, res) => {
 
 // Logout
 router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+  // if (req.session.loggedIn) {
+    if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });

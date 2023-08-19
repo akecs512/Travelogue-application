@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>          
-</head>
-<body>
-    <h1> TRAVELOGUE
+<div align="center">
+  <div id="travelContainer" class='card-header col-md-10'>
+    <h2>
+      View your fun "Travelogues"
+    </h2>
+    <br />
+  </div>
+  {{#each travelDatas as |travelData|}}
+  <div class='travel col-md-5'>
+    <p>
+      {{travelData.destination}}.
+      {{travelData.note}}
+    </p>
+  </div>
+  <div class='col-md-7'>
+    <p>
+      {{ format_date travelData.date}}
+    </p>
+  </div>
+  {{/each}}
+</div>
 
-    </h1>
-</body>
-</html>
+<!-- This is the form for retrrieving saved logs -->
+<script src='/js/addTravel.js'></script>
