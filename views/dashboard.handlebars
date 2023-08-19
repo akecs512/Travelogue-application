@@ -24,19 +24,26 @@
       </label>
       <br />
       <textarea id='note' name='note' rows='5' cols='30'>
-        {{!-- {{note}} --}}
+   
       </textarea>
-      <br />
-      <label for="date">
-        Date:
+      <div class="flex-row" style="gap: 16px;">
+      <div>
+      <label for="start-date">
+        Start Date:
       </label>
-      <br />
-      <input type="date" id="date" name="date" rows='2' cols='30'>
-        {{!-- {{note}} --}}
-      <br />
+      <input type="date" id="start-date" name="start-date" rows='2' cols='30'>
+      </div>
+      <div>
+       <label for="end-date">
+        End Date:
+      </label>
+         <input type="date" id="end-date" name="end-date" rows='2' cols='30'>
+         </div>
+         </div>
       <button type='submit' value='Submit'>
         Submit
       </button>
+
     </form>
   </div>
 <!-- This is the form for adding a new log-->

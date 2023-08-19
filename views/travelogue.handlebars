@@ -7,6 +7,7 @@
   <body>
     <h1> TRAVELOGUE </h1>
     {{#each travelDatas as |travelData|}}
+      <div class="row">
       <div class="travel col-md-5">
         <p>
           {{travelData.destination}}.
@@ -15,8 +16,12 @@
       </div>
       <div class="col-md-7">
         <p>
-          {{travelData.date}}
+          {{travelData.start_date}}
         </p>
+                <p>
+          {{travelData.end_date}}
+        </p>
+      </div>
       </div>
     {{/each}}
   </body>
