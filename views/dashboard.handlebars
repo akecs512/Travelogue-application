@@ -1,42 +1,38 @@
-
-  <div class='menu-container' align="center">
-   <div class='add-travel-note'>
+<div class='menu-container' align="center">
+  <div class='add-travel-note'>
     <h2>
       Travelogues - Enter a trip to remember
     </h2>
+    <br />
     <form class='new-post-form'>
-       <label for='destination'>
-      Destination Name:
-      </label>
-      <input type = 'text' id="destination" name="destination"/>
-      <br />
-      <label for='note'>
-        Travel Notes:</label>
+      <label for='destination'>Destination Name:</label>
+       <br />
+      <input type='text' id="destination" name="destination" />
+      <br /> <br />
+      <label for='note'>Travel Notes:</label>
+       <br />
       <textarea id='note' name='note' rows='5' cols='30'></textarea>
 
-      <div class="flex-row" style="gap: 16px;">
-       <div>
-      <label for="start-date">
-        Start Date:
-      </label>
-      <br />
-      <input type="date"id="start-date" name="start-date">
-       </div>
+      <div class='menu-container' style="gap: 16px;"  align="center" >
+        <br />
+        <div>
+          <label for="start-date">Start Date:</label>
+          <br />
+          <input type="date" id="start-date" name="start-date">
+        </div>
 
-       <div>
-      <label for="end-date">
-        End Date:
-      </label>
-      <br />
-      <input type="date" id="end-date" name="end-date">
-       </div>
+        <div>
+          <label for="end-date">End Date:</label>
+          <br />
+          <input type="date" id="end-date" name="end-date">
+        </div>
       </div>
       <br /> <br />
       <button class="btn btn-primary" type='submit' value='Submit'>
-       Submit
+        Submit
       </button>
     </form>
-   </div>
   </div>
+</div>
 <!-- This is the form for adding a new log-->
 <script src='/js/addTravel.js'></script>
