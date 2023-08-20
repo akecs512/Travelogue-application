@@ -31,7 +31,6 @@ async function newFormHandler(event) {
   }
 }
 
-console.log(document.querySelector('.new-post-form'));
 const formElement = document.querySelector('.new-post-form');
 if (formElement) {
 document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);

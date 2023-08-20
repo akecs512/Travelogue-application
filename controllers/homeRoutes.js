@@ -26,8 +26,6 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/travelogue', withAuth, async (req, res) => {
-    console.log("user_id in travel route");
-    console.log(req.session);
     try {
      // find all travel info
     const dbtravelData = await TravelInfo.findAll({

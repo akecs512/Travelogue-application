@@ -12,10 +12,6 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    console.log("**********************")
-    console.log("dbUserData.username")
-    console.log(dbUserData.username)
-    console.log("**********************")
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.logged_in = true;
@@ -25,7 +21,6 @@ router.post('/', async (req, res) => {
 
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -54,10 +49,6 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-    console.log("**********************")
-    console.log("dbUserData.username")
-    console.log(dbUserData.username)
-    console.log("**********************")
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.logged_in = true;
@@ -69,7 +60,6 @@ router.post('/login', async (req, res) => {
                alert: "welcome back, user!" });
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
