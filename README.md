@@ -34,6 +34,8 @@ The log is added to a list of previous entries.
 
 [Link to our Deployed Page]
 
+https://travelogue-application-10ca673e5794.herokuapp.com/
+
 <img width="554" alt="Screen Shot 2023-08-20 at 2 56 30 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/eda2e1a3-8d1c-4c17-85ab-eadd7307654a">
 <img width="396" alt="Screen Shot 2023-08-20 at 2 56 43 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/c06c3626-698c-45b5-ace4-23738ddbf26d">
 <img width="479" alt="Screen Shot 2023-08-20 at 2 56 56 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/a5ccef6a-c9ab-46f2-807a-4c887ac958ee">
