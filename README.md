@@ -26,13 +26,15 @@ The log is added to a list of previous entries.
 - [Future Development](#future-development)
 - [Credits](#credits)
 - [Resources](#resources)
-    - [Materialize CSS Framework](#materialize-css-framework)
+    - [Argon2](#argon2)
 - [Special Thanks](#special-thanks)
 - [License](#license)
 
 ## Website Preview
 
 [Link to our Deployed Page]
+
+https://travelogue-application-10ca673e5794.herokuapp.com/
 
 <img width="554" alt="Screen Shot 2023-08-20 at 2 56 30 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/eda2e1a3-8d1c-4c17-85ab-eadd7307654a">
 <img width="396" alt="Screen Shot 2023-08-20 at 2 56 43 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/c06c3626-698c-45b5-ace4-23738ddbf26d">
@@ -81,7 +83,8 @@ The log is added to a list of previous entries.
     - ### Adding a photologue would give the user the ability to add pictures of their travels to their travelogues and add another way for them to visually revist their travels.
  
     - ### The ability to share the travelogues would allow the user to send their travel memories to friends and family.
- 
+
+    -### Give the user the ability to go back and add or change notes.
       
 
 - ## Credits
