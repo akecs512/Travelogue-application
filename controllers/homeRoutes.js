@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
   try {
     res.render('homepage', {
       logged_in: req.session.logged_in,
+      user_name: req.session.username,
     });
 } catch (err) {
     res.status(500).json(err);
@@ -39,6 +40,7 @@ router.get('/travelogue', withAuth, async (req, res) => {
         res.render('travelogue', {
           travelDatas,
           logged_in: req.session.logged_in,
+          user_name: req.session.username,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -60,6 +62,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
    res.render("dashboard", {
     travelDatas: [latestTravelData],
     logged_in: req.session.logged_in,
+    user_name: req.session.username,
   });
       
   } catch(err) {
