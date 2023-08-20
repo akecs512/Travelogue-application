@@ -4,7 +4,9 @@ const withAuth = require("../utils/auth");
 
 router.get('/', (req, res) => {
   try {
-    res.render('homepage');
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
+    });
 } catch (err) {
     res.status(500).json(err);
 }
@@ -14,14 +16,15 @@ router.get('/', (req, res) => {
 
 router.get('/login', (req, res) => {
     try {
-        res.render('login');
+        res.render('login', {
+          logged_in: req.session.logged_in,
+        });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
 router.get('/travelogue', withAuth, async (req, res) => {
-// router.get('/travelogue',  (req, res) => {
     console.log("user_id in travel route");
     console.log(req.session);
     try {
@@ -32,7 +35,11 @@ router.get('/travelogue', withAuth, async (req, res) => {
     const travelDatas = dbtravelData.map((travel_info) =>
     travel_info.get({plain: true})
     );
-        res.render('travelogue', {travelDatas});
+        // res.render('travelogue', {travelDatas});
+        res.render('travelogue', {
+          travelDatas,
+          logged_in: req.session.logged_in,
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -50,7 +57,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
       return res.render('dashboard', {travelDatas: []});
     }
     const latestTravelData = latestTravelDataInfo.get();
-   res.render("dashboard", {travelDatas: [latestTravelData]});
+   res.render("dashboard", {
+    travelDatas: [latestTravelData],
+    logged_in: req.session.logged_in,
+  });
       
   } catch(err) {
     console.error(err);
