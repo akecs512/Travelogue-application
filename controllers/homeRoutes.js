@@ -46,28 +46,16 @@ router.get('/travelogue', withAuth, async (req, res) => {
 });
 
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
   try {
-    // find all travel info
-    const latestTravelDataInfo = await TravelInfo.findOne({
-      where:{user_id: req.session.user_id},
-      order: [['createdAt', 'DESC']],
-    });
-    if (!latestTravelDataInfo) {
-      return res.render('dashboard', {travelDatas: []});
-    }
-    const latestTravelData = latestTravelDataInfo.get();
-   res.render("dashboard", {
-    travelDatas: [latestTravelData],
-    logged_in: req.session.logged_in,
-    user_name: req.session.username,
-  });
-      
-  } catch(err) {
-    console.error(err);
-    res.status(500).json(err);
+      res.render('dashboard', {
+        logged_in: req.session.logged_in,
+        user_name: req.session.username,
+      });
+  } catch (err) {
+      res.status(500).json(err);
   }
-  }); 
+});
 
 
 
