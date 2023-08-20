@@ -36,10 +36,9 @@ The log is added to a list of previous entries.
 
 <img width="554" alt="Screen Shot 2023-08-20 at 2 56 30 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/eda2e1a3-8d1c-4c17-85ab-eadd7307654a">
 <img width="396" alt="Screen Shot 2023-08-20 at 2 56 43 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/c06c3626-698c-45b5-ace4-23738ddbf26d">
-<img width="479" alt="Screen Shot 2023-08-20 at 2 56 56 PM" src="https://githu<img width="423" alt="Screen Shot 2023-08-20 at 2 57 51 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/9e44c142-67a8-4e43-be11-9502e33cd413">
-b.com/akecs512/project-2-challenge/assets/79340489/b68128a8-9e1f-4eda-93b7-debc54c81fa1">
+<img width="479" alt="Screen Shot 2023-08-20 at 2 56 56 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/a5ccef6a-c9ab-46f2-807a-4c887ac958ee">
 
-
+<img width="423" alt="Screen Shot 2023-08-20 at 2 57 51 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/e0e56649-da42-4a7d-b87e-77515beed5a0">
 
 
 
