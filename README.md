@@ -34,9 +34,14 @@ The log is added to a list of previous entries.
 
 [Link to our Deployed Page]
 
-![name]
-![name]
-![name]
+<img width="554" alt="Screen Shot 2023-08-20 at 2 56 30 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/eda2e1a3-8d1c-4c17-85ab-eadd7307654a">
+<img width="396" alt="Screen Shot 2023-08-20 at 2 56 43 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/c06c3626-698c-45b5-ace4-23738ddbf26d">
+<img width="479" alt="Screen Shot 2023-08-20 at 2 56 56 PM" src="https://githu<img width="423" alt="Screen Shot 2023-08-20 at 2 57 51 PM" src="https://github.com/akecs512/project-2-challenge/assets/79340489/9e44c142-67a8-4e43-be11-9502e33cd413">
+b.com/akecs512/project-2-challenge/assets/79340489/b68128a8-9e1f-4eda-93b7-debc54c81fa1">
+
+
+
+
 
 ## Concept
 
@@ -49,12 +54,13 @@ The log is added to a list of previous entries.
 
 - ### Acceptance Criteria
 
-      GIVEN a travelogue application:
-      WHEN I log into the website using a unique username and password
-      THEN I am presented with a page with existing logs and a form to enter a new trip.
-      AFTER I enter a new log with dates, destination, and notes, I click a submit button.
-      THEN the new log is saved and appears in the list and the fields are cleared.
-      THEN I can enter a new log.
+        GIVEN a travelogue application:
+        WHEN I log into the website using a unique username and password
+        THEN I am presented with a form to enter a new trip.
+        AFTER I enter a new log with dates, destination, and notes, I click a submit button.
+        THEN the new log is saved and appears on the home page, along with previous entries.
+        IF I click on the dashboard, I can enter a new log.
+
       
       
 - ### Motivation/Development
