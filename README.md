@@ -26,7 +26,7 @@ The log is added to a list of previous entries.
 - [Future Development](#future-development)
 - [Credits](#credits)
 - [Resources](#resources)
-    - [Materialize CSS Framework](#materialize-css-framework)
+    - [Argon2](#argon2)
 - [Special Thanks](#special-thanks)
 - [License](#license)
 
@@ -83,7 +83,8 @@ https://travelogue-application-10ca673e5794.herokuapp.com/
     - ### Adding a photologue would give the user the ability to add pictures of their travels to their travelogues and add another way for them to visually revist their travels.
  
     - ### The ability to share the travelogues would allow the user to send their travel memories to friends and family.
- 
+
+    -### Give the user the ability to go back and add or change notes.
       
 
 - ## Credits
